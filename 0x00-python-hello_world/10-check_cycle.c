@@ -10,8 +10,8 @@ int check_cycle(listint_t *list)
 	listint_t *temp;
 	listint_t *fast;
 
-	*temp = root;
-	*fast = root;
+	temp = list;
+	fast = list;
 
 	while (temp != NULL && fast->next != NULL)
 	{
