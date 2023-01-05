@@ -10,8 +10,8 @@ if __name__ == "__main__":
         print("{}argument:".format(n - 1))
     else:
         print{"{}argument:".format(n - 1))
-    for i in argv:
-        if arg == 0:
+    for arg in argv:
+        if i == 0:
             i += 1
             continue
         print("{}: {}".format(i, arg))
