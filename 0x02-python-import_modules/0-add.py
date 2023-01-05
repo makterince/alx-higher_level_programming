@@ -9,7 +9,5 @@ def add(a, b):
     b = 2
 
 
-sum = 0
 for i in range(1, n):
-    sum += int(sys.argv[i])
-print("{} + {} = {}".format(a, b, sum), end='')
+    print("{} + {} = {}".format(a, b, sum), end='')
