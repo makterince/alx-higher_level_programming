@@ -10,6 +10,7 @@ if __name__ == "__main__":
         print("{}argument:".format(n - 1))
     else:
         print{"{}argument:".format(n - 1))
+
     for arg in argv:
         if i == 0:
             i += 1
