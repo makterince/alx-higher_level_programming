@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    from sys import argv
-    n = len(argv)
+    import sys
+    n = len(sys.argv)
     i = 0
 
     if n == 2:
