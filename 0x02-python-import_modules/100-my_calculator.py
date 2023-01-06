@@ -1,15 +1,23 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    from calculator_1 import add, sub, mul, div
-    import sys
+    from calculator_1 import add, sub, div, mul
+    from sys import argv
 
-    n = len(sys.argv)
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
-    operator = {"+": add, "-": sub, "*": mul, "/": div}
-    if n == 3:
-        print("{} {} {} = {}".format(a, sys.argv[2], b, 
-                operator[sys.argv[2]](a, b)))
+    length = len(argv)
+    if length != 4:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        exit(1)
+    op = argv[2]
+    a = int(argv[1])
+    b = int(argv[3])
+    if op == "+":
+        print("{} + {} = {}".format(a, b, add(a, b)))
+    elif op == "-":
+        print("{} - {} = {}".format(a, b, sub(a, b)))
+    elif op == "/":
+        print("{} / {} = {}".format(a, b, div(a, b)))
+    elif op == "*":
+        print("{} * {} = {}".format(a, b, mul(a, b)))
     else:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")            
+        print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
