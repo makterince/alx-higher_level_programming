@@ -4,6 +4,5 @@ def uniq_add(my_list=[]):
     addUniq = 0
     for numbers in uniq:
         addUniq += numbers
-
     return addUniq
 
