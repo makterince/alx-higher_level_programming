@@ -5,4 +5,3 @@ def uniq_add(my_list=[]):
     for numbers in uniq:
         addUniq += numbers
     return addUniq
-
