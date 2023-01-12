@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if not isinstance(roman_string, str) or roman_string is None:
+    if (not isinstance(roman_string, str) or roman_string is None):
         return 0
     romeno_uno = {
             "I": = 1,
@@ -15,8 +15,8 @@ def roman_to_int(roman_string):
     for i in range(len(roman_string)):
         if romeno_uno.get(roman_string[i], 0) == 0:
             return 0
-        if i != (len(roman_string) - 1) and romeno_uno[roman_string[i]]
-        < romeno_uno[roman_string[i + 1]]:
+        if (i != (len(roman_string) - 1) and romeno_uno[roman_string[i]]
+        < romeno_uno[roman_string[i + 1]]):
             number += romeno_uno[roman_string[i]] * -1
         else:
             number += romeno_uno[roman_string[i]]
