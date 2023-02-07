@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" creating an empty class """
+""" module contains a class with public
+    instances method area() that raises exceptions
+"""
 
 
 class BaseGeometry:
