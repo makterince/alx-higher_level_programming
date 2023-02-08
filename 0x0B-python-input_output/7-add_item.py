@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""script adds all arguments to a python list """
+"""
+    This module contains a script that adds all of its argument to a list and
+    saves them as a JSON object in a file add_item.json
+"""
 
 import sys
 
