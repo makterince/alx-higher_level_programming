@@ -5,6 +5,6 @@ import json
 
 
 def from_json_string(my_str):
-    """ parse json string into a python object """
+    """ returns json string into a python object """
 
     return json.loads(my_str)
