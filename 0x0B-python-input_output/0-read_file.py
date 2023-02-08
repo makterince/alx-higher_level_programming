@@ -5,5 +5,10 @@
 def read_file(filename=""):
     """ opening the file """
 
-    with open("UTF8", encoding="utf-8") as my_file:
-        read_file = my_file.read()
+    with open(filename, encoding="utf-8") as my_file:
+        """loop to read each line of the file """
+
+        for line in my_file:
+            """ print to standard output"""
+
+            print(line, end="")
