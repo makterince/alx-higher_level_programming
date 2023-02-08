@@ -3,10 +3,10 @@
 
 
 def append_write(filename="", text=""):
-    """ open the file with mode write """
+    """ open the file with mode appendd """
 
-    with open(filename, 'w', encoding="utf-8") as my_file:
+    with open(filename, 'a', encoding="utf-8") as my_file:
         """ append text """
 
-        my_file.append(text)
+        my_file.write(text)
     return len(text)
