@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ module takes a string input and returns a python object """
 
 import json
