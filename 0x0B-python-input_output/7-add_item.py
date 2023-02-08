@@ -8,14 +8,13 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 filename = "add_item.json"
 
+try:
+    c_json = load_from_json_file(filename)
+except FileNotFoundError:
+    c_json = []
+except json.decoder.JSONDecodeError:
+    c_json = []
 
-def add_item(*args):
-    """ lists all arguments """
-
-    items = load_from_json_file(filename)
-    items += list(args)
-    save_to_json_file(items, filename)
-
-
-if __name__ == '__main__':
-    add_item(*sys.argv[1:])
+for item in sys.argv[1:]:
+    c_json += [item]
+    save_to_json_file(c_json, filename)
