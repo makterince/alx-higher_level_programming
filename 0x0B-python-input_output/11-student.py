@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""This module contains a Student class """
+"""
+    This module contains a Student class 
+"""
 
 
 class Student:
