@@ -34,9 +34,9 @@ class Magic:
                 print("{}: {:d}".format(key, self.dic[key]))
 
 if __name__ == "__main__":
-        magic = Magic()
-        magic.init_dic()
-        nlines = 0
+    magic = Magic()
+    magic.init_dic()
+    nlines = 0
 
     try:
         for line in sys.stdin:
