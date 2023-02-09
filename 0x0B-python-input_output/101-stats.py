@@ -5,13 +5,16 @@ import sys
 
 class Magic:
     """ Class to generates instances with dict and size"""
+
     def __init__(self):
         """ Init method """
+
         self.dic = {}
         self.size = 0
 
     def init_dic(self):
         """ Initialize dict """
+
         self.dic['200'] = 0
         self.dic['301'] = 0
         self.dic['400'] = 0
@@ -23,11 +26,13 @@ class Magic:
 
     def add_status_code(self, status):
         """ add repeated number to the status code """
+
         if status in self.dic:
             self.dic[status] += 1
 
     def print_info(self, sig=0, frame=0):
         """ print status code """
+        
         print("File size: {:d}".format(self.size))
         for key in sorted(self.dic.keys()):
             if self.dic[key] != 0:
