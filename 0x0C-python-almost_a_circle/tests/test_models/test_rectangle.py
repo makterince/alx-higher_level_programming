@@ -66,5 +66,35 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             r1.y = -8
 
+    def test_area(self):
+        r = Rectangle(2, 4, id=1)
+        self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 2/4")
+
+    def test_display(self):
+        self.assertEqual(self.rect1.display(),
+                '\n\n  #####\n  #####\n  #####\n  #####\n  #####\n')
+        self.assertEqual(self.rect2.display(), '\n ##\n ##\n ##\n')
+
+    def test_str(self):
+        self.assertEqual(str(self.rect1), '[Rectangle] (1) 2/3 - 10/5')
+        self.assertEqual(str(self.rect2), '[Rectangle] (9) 1/0 - 2/3')
+
+    def test_update_args(self):
+        r = Rectangle(2, 4, id=1)
+        r.update(3, 5, 7, 9, 11)
+        self.assertEqual(r.id, 3)
+        self.assertEqual(r.width, 5)
+        self.assertEqual(r.height, 7)
+        self.assertEqual(r.x, 9)
+        self.assertEqual(r.y, 11)
+
+    def test_update_kwargs(self):
+        r = Rectangle(2, 4, id=1)
+        r.update(width=5, height=7, x=9, y=11)
+        self.assertEqual(r.width, 5)
+        self.assertEqual(r.height, 7)
+        self.assertEqual(r.x, 9)
+        self.assertEqual(r.y, 11)
+
 if __name__ == '__main__':
     unittest.main()
