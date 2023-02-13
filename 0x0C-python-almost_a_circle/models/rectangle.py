@@ -92,6 +92,12 @@ class Rectangle(Base):
         for i in range(self.height):
             print(" " * self.x + "#" * self.width)
 
+    def to_dictionary(self):
+        """ returns the dictionary representation of the rectangle """
+
+        return {'id': self.id, 'width': self.width, 'height': self.height
+                'x': self.x, 'y':self.y}
+
     def __str__(self):
         """
             Returns a string representation of the rectangle instance
