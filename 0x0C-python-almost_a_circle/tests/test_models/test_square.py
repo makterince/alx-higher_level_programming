@@ -1,5 +1,10 @@
 import unittest
-from models.square import Square
+import io
+import sys
+import json
+from pathlib import Path
+from models.rectangle import Rectangle
+from models.base import Base
 
 class TestSquare(unittest.TestCase):
     def test_init(self):
