@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# square.py
+
 from models.rectangle import Rectangle
 
 """ square class that inherits from rectangle """
@@ -40,20 +42,36 @@ class Square(Rectangle):
 
         def update(self, *args, **kwargs):
             """ updates to the attributes of the square"""
-
-            if args:
-                for i, arg in enumerate(args):
-                    if i == 0:
-                        self.id = arg
-                    if i == 1:
+            if args and len(args) != 0:
+                a = 0
+                for arg in args:
+                    if a == 0:
+                        if arg is None:
+                            self.__init__(self.size, self.x, self.y)
+                        else:
+                            self.id = arg
+                    elif a == 1:
                         self.size = arg
-                    if i == 2:
+                    elif a == 2:
                         self.x = arg
-                    if i == 3:
+                    elif a == 3:
                         self.y = arg
-            else:
-                for key, value in kwargs.items():
-                    setattr(self, key, value)
+                    a += 1
+
+            elif kwargs and len(kwargs) != 0:
+                for k, v in kwargs.items():
+                    if k == "id":
+                        if v is None:
+                            self.__init__(self.size, self.x, self.y)
+                        else:
+                            self.id = v
+                    elif k == "size":
+                        self.size = v
+                    elif k == "x":
+                        self.x = v
+                    elif k == "y":
+                        self.y = v
+
         def to_dictionary(self):
             """Returns the dictionary representation of the square.
             
@@ -72,5 +90,6 @@ class Square(Rectangle):
             Returns:
                 str: A string in the format [Square] (<id>) <x>/<y> - <size>.
             """
-            return ("[Square] ({}) {}/{} - {}".format
-                    (self.id, self.x, self.y, self.width))
+            return ("[Square] ({}) {}/{} - {}".format(self.id,
+                                                        self.x, self.y,
+                                                        self.width))
