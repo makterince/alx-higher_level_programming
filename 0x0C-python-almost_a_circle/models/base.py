@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # base.py
-""" s module contains a class Base that is the base class for
+""" this module contains a class Base that is the base class for
     all subclasses
 """
 
@@ -24,7 +24,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ returns the JSON rep of the list dictionaries"""
-        
+
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
@@ -36,11 +36,11 @@ class Base:
 
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
-        if list_objs is None:
-            jsonfile.write("[]")
-        else:
-            list_dicts = [o.to_dictionary() for o in list_objs]
-            jsonfile.write(Base.to_json_string(list_dicts))
+            if list_objs is None:
+                jsonfile.write("[]")
+            else:
+                list_dicts = [o.to_dictionary() for o in list_objs]
+                jsonfile.write(Base.to_json_string(list_dicts))
 
         with open(filename, "w") as f:
             f.write(cls.to_json_string(list_dictionaries))
@@ -48,7 +48,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """ returns the list of the JSON string representation json_string """
-        
+
         if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)
@@ -56,7 +56,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ returns an instance with all attributes already set """
-        
+
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
@@ -68,7 +68,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """ returns list of instances"""
-        
+
         filename = str(cls.__name__) + ".json"
         try:
             with open(filename, "r") as jsonfile:
@@ -80,7 +80,7 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """ Serializes in CSV """
-        
+
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvfile:
             if list_objs is None or list_objs == []:
@@ -93,11 +93,11 @@ class Base:
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 for obj in list_objs:
                     writer.writerow(obj.to_dictionary())
-                    
+
     @classmethod
     def load_from_file_csv(cls):
         """ Deserializes in CSV """
-        
+
         filename = cls.__name__ + ".csv"
         try:
             with open(filename, "r", newline="") as csvfile:
@@ -107,48 +107,44 @@ class Base:
                     fieldnames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
                 list_dicts = [dict([k, int(v)] for k, v in d.items())
-                        for d in list_dicts]
+                              for d in list_dicts]
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
 
-
     @staticmethod
     def draw(list_rectangles, list_squares):
-    """Draw Rectangles and Squares using the turtle module.
-    
-    Args:
-        list_rectangles (list): A list of Rectangle objects to draw.                         list_squares (list): A list of Square objects to draw.
-    """
-    turt = turtle.Turtle()
-    turt.screen.bgcolor("#b7312c")
-    turt.pensize(3)
-    turt.shape("turtle")
-    
-    turt.color("#ffffff")
-    for rect in list_rectangles:
-        turt.showturtle()
-        turt.up()
-        turt.goto(rect.x, rect.y)
-        turt.down()
-        for i in range(2):
-            turt.forward(rect.width)
-            turt.left(90)
-            turt.forward(rect.height)
-            turt.left(90)
-        turt.hideturtle()
+        """Draw Rectangles and Squares using the turtle module.
+        Args:
+            list_rectangles (list): A list of Rectangle objects to draw.
+            list_squares (list): A list of Square objects to draw.
+        """
+        turt = turtle.Turtle()
+        turt.screen.bgcolor("#b7312c")
+        turt.pensize(3)
+        turt.shape("turtle")
+        turt.color("#ffffff")
+        for rect in list_rectangles:
+            turt.showturtle()
+            turt.up()
+            turt.goto(rect.x, rect.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(rect.width)            turt.left(90)
+                turt.forward(rect.height)
+                turt.left(90)
+                turt.hideturtle()
 
-    turt.color("#b5e3d8")
-    for sq in list_squares:
-        turt.showturtle()
-        turt.up()
-        turt.goto(sq.x, sq.y)
-        turt.down()
-        for i in range(2):
-            turt.forward(sq.width)
-            turt.left(90)
-            turt.forward(sq.height)
-            turt.left(90)
-        turt.hideturtle()
-        
-    turtle.exitonclick()
+        turt.color("#b5e3d8")
+        for sq in list_squares:
+            turt.showturtle()
+            turt.up()
+            turt.goto(sq.x, sq.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(sq.width)
+                turt.left(90)
+                turt.forward(sq.height)
+                turt.left(90)
+                turt.hideturtle()
+        turtle.exitonclick()
