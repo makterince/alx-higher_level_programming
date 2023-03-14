@@ -1,2 +1,2 @@
---shows all the data bases in the server
+-- shows all the data bases in the server
 SHOW DATABASES;
