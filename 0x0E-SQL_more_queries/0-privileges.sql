@@ -1,2 +1,4 @@
--- list all the priviledges of the mysql in my server
-SELECT * FROM mysql.user WHERE User IN ('user_0d_1', 'user_0d_2');
+-- List privileges for user_0d_1
+SHOW GRANTS FOR user_0d_1@localhost;
+-- List privileges for user_0d_2
+SHOW GRANTS FOR user_0d_2@localhost;
