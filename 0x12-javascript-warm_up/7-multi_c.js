@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const printX = parseInt(process.argv.splice(2));
+const printX = process.argv.splice(2);
 const x = printX[0];
 if (isNaN(x)) {
   console.log('Missing number of occurences');
