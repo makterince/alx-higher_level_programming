@@ -6,6 +6,4 @@ const argumen = process.argv.slice (2);
 	else if (argumen.length === 1) {
 		console.log('Argument found');
 	}
-	else {
-		console.log('Arguments found');
-	}
+	else	console.log('Arguments found');
