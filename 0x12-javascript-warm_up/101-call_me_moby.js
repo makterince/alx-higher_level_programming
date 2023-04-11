@@ -1,9 +1,4 @@
 #!/usr/bin/node
-function Xtimes(x, theFunction) {
-	if (x <= 0 ) {
-		return ;
-	}
-	theFunction();
-	Xtimes(x - 1, theFunction);
-}
-exports.Xtimes = Xtimes;
+exports.Xtimes = function (x, theFunction) {
+	for (let i = 0; i < x; i++) theFunction();
+};
