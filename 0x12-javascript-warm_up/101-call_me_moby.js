@@ -1,7 +1,7 @@
 #!/usr/bin/node
-const Xtimes = (x, theFunction) => {
+function Xtimes(x, theFunction) {
 	for (let i = 0; i < x; i++) {
-		return (theFunction);
+		return (theFunction());
 	}
 };
-module.exports = { Xtimes };
+module.exports.Xtimes = Xtimes;
