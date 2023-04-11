@@ -6,4 +6,4 @@ function Xtimes(x, theFunction) {
 	theFunction();
 	Xtimes(x - 1, theFunction);
 }
-module.exports.Xtimes = Xtimes;
+exports.Xtimes = Xtimes;
