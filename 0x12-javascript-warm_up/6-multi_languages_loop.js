@@ -1,5 +1,5 @@
 #!/usr/bin/node
-let multiLine = [];
+const multiLine = [];
 multiLine[0] = 'C is fun';
 multiLine[1] = 'Python is cool';
 multiLine[2] = 'Javascript is amazing';
