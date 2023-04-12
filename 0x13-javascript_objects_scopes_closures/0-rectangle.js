@@ -8,6 +8,6 @@ class Rectangle {
 		this.height = height;
 	}
 	getArea() {
-		console.log((this.width) * (this.height))
-	};
+		return ((this.width) * (this.height));
+	}
 }
