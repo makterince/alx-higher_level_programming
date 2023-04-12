@@ -20,3 +20,4 @@ class Rectangle {
 		console.log(rectangle);
 	}
 }
+exports.Rectangle = Rectangle();
