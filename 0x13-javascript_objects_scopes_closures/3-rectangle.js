@@ -8,14 +8,7 @@ class Rectangle {
   }
 
   print () {
-    let rectangle = '';
-    for (let i = 0; i < this.height; i++) {
-      for (let j = 0; j < this.width; j++) {
-        rectangle += 'X ';
-      }
-      rectangle += '\n';
-    }
-    console.log(rectangle);
+    for (let i = 0; i < this.height; i++) console.log('X'.repeat(this.width));
   }
 }
 exports.Rectangle = Rectangle;
