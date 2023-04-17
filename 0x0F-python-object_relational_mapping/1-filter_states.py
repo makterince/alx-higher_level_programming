@@ -9,9 +9,9 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3])
     curs = db.cursor()
     curs.execute("SELECT * FROM states WHERE name
-                   LIKE BINARY 'N%' ORDER BY states.id ASC")
-    for state in curs.fetchall():
+                 LIKE BINARY 'N%' ORDER BY states.id ASC")
+    rows = curs.fetchall()
+    for state in rows:
         print(state)
-
     curs.close()
     db.close()
