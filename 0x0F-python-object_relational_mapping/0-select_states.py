@@ -2,10 +2,9 @@
 """
 Script that lists all states from the database hbtn_0e_0_usa
 """
-
-
 import MySQLdb
 import sys
+
 
 if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost",
@@ -14,16 +13,16 @@ if __name__ == "__main__":
             passwd=sys.argv[2],
             db=sys.argv[3])
     
-    cursor = db.cursor()
+    curs = db.cursor()
     
     query = "SELECT * FROM states"
     
-    cursor.execute(query)
+    curs.execute(query)
     
-    results = cursor.fetchall()
+    results = curs.fetchall()
     
     for row in results:
         print(row)
 
-    cursor.close()
+    curs.close()
     db.close()
