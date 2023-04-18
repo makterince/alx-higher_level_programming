@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
     Displays the first object in the database hbtn_0e_6_usa
 """
@@ -17,8 +16,6 @@ if __name__ == '__main__':
 
     Session = sessionmaker(bind=engine)
     session = Session()
-
     firstState = session.query(State).order_by(State.id).first()
-
     print("Nothing" if not firstState else "{}: {}".format(
         firstState.id, firstState.name))
