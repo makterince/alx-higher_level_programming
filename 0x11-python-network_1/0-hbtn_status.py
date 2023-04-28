@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-import urllib.request
+""" module features a url and shows its response """
+if __name__ == "__main__":
+    from urllib.request import urlopen
+
 
 with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
     html = response.read()
