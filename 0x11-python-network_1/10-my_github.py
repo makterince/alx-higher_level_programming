@@ -6,7 +6,7 @@
 if __name__ == "__main__":
     import requests
     from sys import argv
-    
+
     headers = {
             "Authorization": "Bearer {}".format(argv[2]),
             "X-GitHub-Api-Version": "2022-11-28"
