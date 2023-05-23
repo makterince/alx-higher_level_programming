@@ -4,7 +4,7 @@ const requiredUrl = process.argv[2];
 
 request.get(requiredUrl, function (error, response) {
   if (error) {
-    console.error('Error: ', error);
+    console.error('Error:', error);
   }
-  console.log('code: ', response.statusCode);
+  console.log('code:', response.statusCode);
 });
